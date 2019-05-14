@@ -46,5 +46,62 @@ var firebaseConfig = {
     $("#destination-name-input").val("");
     $("#first-train-input").val("");
     $("#frequency-input").val("");
-  });
+});
+
+database.ref().on("child_added", function(childSnapshot) {
+    console.log(childSnapshot.val());
+
+    // Stores the data into variables to prepend the database
+    var trainName = childSnapshot.val().name;
+    var destinationName = childSnapshot.val().destination;
+    var firstTrain = childSnapshot.val().first;
+    var freqTrain = childSnapshot.val().frequency;
+
+    // use moment.js to determine the next arriving train
+    // use moment.js to determine the ETA in minutes based on the arrival time and current time
+
+   
+    
+
+    // moment.js to determine difference in currentTime and first train
+
+    // First Time (pushed back 1 year to make sure it comes before current time)
+    var firstTimeConverted = moment(firstTrain, "HH:mm").subtract(1, "years");
+    console.log(firstTimeConverted);
+
+    // moment.js to establish current time
+    var currentTime = moment();
+    console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
+
+    // Difference between the times
+    var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
+    console.log("DIFFERENCE IN TIME: " + diffTime);
+
+    // Time apart (remainder)
+    var tRemainder = diffTime % freqTrain;
+    console.log(tRemainder);
+
+    // Minute Until Train
+    var tMinutesTillTrain = freqTrain - tRemainder;
+    console.log("MINUTES TILL TRAIN: " + tMinutesTillTrain);
+
+    // Next Train
+    var nextTrainTime = moment().add(tMinutesTillTrain, "minutes");
+    console.log("ARRIVAL TIME: " + moment(nextTrainTime).format("hh:mm"));
+    // possibly use interval or clock to show countdown of arrival
+
+    // append results to the row in the New Train data table
+    var trainRow = $("<tr>").append(
+        $("<td>").text(trainName),
+        $("<td>").text(destinationName),
+        $("<td>").text(freqTrain),
+        $("<td>").text(moment(nextTrainTime).format("hh:mm")),
+        $("<td>").text(tMinutesTillTrain)
+    );
+
+    $("#schedule-table > tbody").append(trainRow);
+    console.log(trainRow)
+})
+
+
 
