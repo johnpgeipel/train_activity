@@ -22,7 +22,10 @@ var firebaseConfig = {
     var destinationName;
     var firstTrain;
     var freqTrain = 0;
-    
+    var clockTime;
+
+    var clockTime = moment().format("hh:mm:ss")
+    $(".clock").text(clockTime)
 
 
   

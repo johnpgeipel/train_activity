@@ -1,9 +1,18 @@
 .jumbotron, .col-md-12 {
-    box-shadow: 0px 4px 6px slategray;
-    
-    
-    
+    box-shadow: 0px 4px 6px slategray; 
 }
+
+td, th {
+    text-align: center;
+}
+
+.clock {
+    float: right;
+    font-size: 50px;
+    color: lightblue;
+}
+
+
 
 
 
@@ -16,6 +25,7 @@
     font-family: 'Roboto', sans-serif;
     color: white;
     font-size: 100px;
+    line-height: 90px;
 
 }
 
@@ -24,9 +34,10 @@
 }
 
 .jumbotron h3 {
-    font-size: 20px;
+    font-size: 26px;
     color: white;
     font-family: 'Raleway', sans-serif;
+    padding-left: 3px;
 
 }
 
