@@ -1,8 +1,39 @@
 .jumbotron, .col-md-12 {
     box-shadow: 0px 4px 6px slategray;
+    
+    
+    
 }
+
+
 
 .col-md-12 {
     padding: 0px 0px;
     margin-bottom: 12px;
 }
+
+.jumbotron h1 {
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    font-size: 100px;
+
+}
+
+.jumbotron {
+    background-color: #006dcc;
+}
+
+.jumbotron h3 {
+    font-size: 20px;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+
+}
+
+.card-header {
+    background-color: #006dcc;
+    font-family: 'Raleway', sans-serif;
+    color: white;
+
+}
+

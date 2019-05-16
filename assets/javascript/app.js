@@ -1,3 +1,7 @@
+
+
+
+
 // Firebase config script
 var firebaseConfig = {
     apiKey: "AIzaSyAP32V0fY_5UhW9yzWxz22j7ew_8XQlep4",
@@ -18,6 +22,7 @@ var firebaseConfig = {
     var destinationName;
     var firstTrain;
     var freqTrain = 0;
+    
 
 
   
@@ -66,6 +71,11 @@ database.ref().on("child_added", function(childSnapshot) {
     // declare variables for next arrival and minutes away
     var nextArr;
     var minAway;
+    
+
+    
+
+    
 
     var currentTime = moment().format("hh:mm");
     console.log(currentTime)
@@ -83,11 +93,12 @@ database.ref().on("child_added", function(childSnapshot) {
 
     var minAway = childSnapshot.val().frequency - timeRemainder;
 
+    
+
     console.log("Min Away: " + minAway)
 
     var nextArr = moment().add(minAway, "minutes");
         nextArr = moment(nextArr).format("hh:mm");
-
 
 
 
@@ -108,6 +119,8 @@ database.ref().on("child_added", function(childSnapshot) {
 
     $("#schedule-table > tbody").append(trainRow);
     console.log(trainRow)
+
+
 })
 
 
