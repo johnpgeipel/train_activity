@@ -9,28 +9,31 @@ td, th {
 .clock {
     float: right;
     font-size: 50px;
-    color: lightblue;
+    color: rgba(173, 216, 230, 0.75);
+    font-family: 'Montserrat', sans-serif;
 }
-
-
-
-
 
 .col-md-12 {
     padding: 0px 0px;
-    margin-bottom: 12px;
+    margin-bottom: 15px;
+}
+
+.col-md-4 {
+    margin: 0px 15px 0px 15px;
 }
 
 .jumbotron h1 {
-    font-family: 'Roboto', sans-serif;
+    /* font-family: 'Roboto', sans-serif; */
     color: white;
     font-size: 100px;
     line-height: 90px;
+    font-family: 'Raleway', sans-serif;
 
 }
 
 .jumbotron {
     background-color: #006dcc;
+    margin: 0px 10px 20px 10px;
 }
 
 .jumbotron h3 {

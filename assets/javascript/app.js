@@ -24,8 +24,18 @@ var firebaseConfig = {
     var freqTrain = 0;
     var clockTime;
 
-    var clockTime = moment().format("hh:mm:ss")
-    $(".clock").text(clockTime)
+    // var clockTime = moment().format('LTS');
+    // $(".clock").text(clockTime)
+
+    function displayTime() {
+        var time = moment().format('HH:mm:ss');
+        $('.clock').html(time);
+        setTimeout(displayTime, 1000);
+    }
+$(document).ready(function() {
+        displayTime();
+    
+    displayTime();
 
 
   
@@ -127,4 +137,4 @@ database.ref().on("child_added", function(childSnapshot) {
 })
 
 
-
+});
