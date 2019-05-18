@@ -51,3 +51,12 @@ td, th {
 
 }
 
+tr:nth-child(even) {
+    background-color: rgba(173, 216, 230, 0.50);
+}
+
+.form-control {
+    background-color: rgba(173, 216, 230, 0.50);
+}
+
+}
