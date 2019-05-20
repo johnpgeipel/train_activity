@@ -137,6 +137,38 @@ footer {
 
 }
 
+@media screen and (max-width: 500px) {
+    .card {
+        margin: 10px 0px 5px 0px !important;
+        border: white 1px solid;
+        border-radius: 10px;
+    }
+    .row {
+        margin: -40px 3px 5px 3px !important;
+
+    }
+
+    .clock {
+        font-size: 40px;
+    }
+
+    .card-header {
+        background-color: white;
+        font-family: 'Raleway', sans-serif;
+        font-size: 25px;
+        font-weight: bold;
+        border-radius: 10px !important;
+        border:white 1px solid;
+        
+        color:  rgb(17, 91, 114);
+    
+    }
+
+    th, td, tr, label, input {
+        font-size: 12px
+    }
+  }
+
 
 
 
