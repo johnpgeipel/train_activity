@@ -1,23 +1,27 @@
-.jumbotron, .col-md-12 {
-    /* box-shadow: 0px 4px 6px slategray;  */
+.jumbotron, .card {
+    box-shadow: 0px 4px 6px slategray; 
 }
 
 td, th {
     text-align: center;
 }
 
-/* body {
-    background: url("../images/train.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-} */
+body {
+    background-color: rgba(216, 216, 216, 0.50);
+}
 
 .clock {
     float: right;
     font-size: 50px;
     /* color: rgba(76, 159, 187, 0.75); */
-    color: rgba(255, 255, 255, 0.60);
+    color: rgba(255, 255, 255, 0.6);
     font-family: 'Montserrat', sans-serif;
+}
+
+.card {
+    margin: 20px 5px 20px 5px;
+    border: white 1px solid;
+    border-radius: 10px;
 }
 
 .col-md-8 {
@@ -45,10 +49,10 @@ td, th {
     /* background-color: #006dcc; */
     /* margin: 0px 10px 20px 10px; */
     /* background: none; */
-    background: url("../images/train2.png");
+    background: url("../images/train3.png");
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 50px 20px 75px 20px;
+    padding: 50px 20px 200px 20px;
     margin: 0px;
 }
 
@@ -61,24 +65,33 @@ td, th {
 }
 
 .card-header {
-    background-color: #006dcc;
+    background-color: white;
     font-family: 'Raleway', sans-serif;
-    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 10px !important;
+    border:white 1px solid;
+    
+    color:  rgb(17, 91, 114);
 
 }
 
 tr:nth-child(even) {
-    background-color: rgba(173, 216, 230, 0.50);
+    /* background-color: rgba(173, 216, 230, 0.50); */
+    background-color: rgb(255, 234, 140, 0.80);
 }
+
 
 .form-control {
     background-color: rgba(173, 216, 230, 0.50);
 }
 
 .row {
-    /* margin-top: -200px; */
+    margin-top: -100px;
     margin-left: 20px;
     margin-right: 20px;
 }
+
+
 
 
