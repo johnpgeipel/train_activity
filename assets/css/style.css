@@ -1,5 +1,7 @@
 .jumbotron, .card {
-    box-shadow: 0px 4px 6px slategray; 
+    /* box-shadow: 0px 4px 6px slategray; */
+    box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.75);
+
 }
 
 td, th {
@@ -7,7 +9,8 @@ td, th {
 }
 
 body {
-    background-color: rgba(216, 216, 216, 0.50);
+    /* background-color: rgba(216, 216, 216, 0.50); */
+    background-color: rgb(47, 58, 87)
 }
 
 .clock {
@@ -19,7 +22,7 @@ body {
 }
 
 .card {
-    margin: 20px 5px 20px 5px;
+    margin: 20px 7px 5px 7px;
     border: white 1px solid;
     border-radius: 10px;
 }
@@ -52,7 +55,7 @@ body {
     background: url("../images/train3.png");
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 50px 20px 200px 20px;
+    padding: 50px 40px 200px 40px;
     margin: 0px;
 }
 
@@ -81,6 +84,29 @@ tr:nth-child(even) {
     background-color: rgb(255, 234, 140, 0.80);
 }
 
+th, td, label, input {
+    /* font-family: 'Monserrat', sans-serif; */
+    font-family: 'Raleway', sans-serif;
+}
+
+label {
+    font-weight: bold;
+}
+
+th, tr {
+    border: none !important;
+}
+
+tr:hover {
+    background-color: gold !important;
+}
+
+.tr-head:hover {
+    background-color: white !important;
+}
+
+
+
 
 .form-control {
     background-color: rgba(173, 216, 230, 0.50);
@@ -90,6 +116,14 @@ tr:nth-child(even) {
     margin-top: -100px;
     margin-left: 20px;
     margin-right: 20px;
+}
+
+.btn {
+    background-color: rgb(17, 91, 114);
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    border: none;
+
 }
 
 
