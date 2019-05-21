@@ -28,7 +28,7 @@ var firebaseConfig = {
     // $(".clock").text(clockTime)
 
     function displayTime() {
-        var time = moment().format('HH:mm:ss');
+        var time = moment().format('HH:mm');
         $('.clock').html(time);
         setTimeout(displayTime, 1000);
     }
