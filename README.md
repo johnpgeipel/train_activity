@@ -3,7 +3,8 @@
 
 https://johnpgeipel.github.io/train_activity/
 
----
+![train_activity_capture](assets/images/Capture.PNG)
+
 
  - **All Aboard** is an application designed to accept and post scheduling information.
  
@@ -11,7 +12,7 @@ https://johnpgeipel.github.io/train_activity/
     - **Train Name**
     - **Destination**
     - **First Train (HH:mm)** *in military time*
-    - **Frequency of Train**
+    - **Frequency of Train** *in minutes*
     
 - Using Google Firebase, JQuery & Moment.js, this information is stored in a database and processed to calculate and display the following:
     - **Train Name**
