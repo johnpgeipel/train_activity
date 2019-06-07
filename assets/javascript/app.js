@@ -35,7 +35,7 @@ var firebaseConfig = {
 $(document).ready(function() {
         displayTime();
     
-    displayTime();
+    // displayTime();
 
 
   
@@ -43,6 +43,9 @@ $(document).ready(function() {
   $("#add-train-btn").on("click", function(event) {
       event.preventDefault();
 
+    if (!trainName || !destinationName || !firstTrain || !freqTrain || freqTrain <=0) {
+      alert("The information you have entered is invalid. Please try again.")
+    } else {
     //   train input from forms
     trainName = $("#train-name-input").val().trim();
     destinationName = $("#destination-name-input").val().trim();
@@ -77,6 +80,7 @@ $(document).ready(function() {
     $("#destination-name-input").val("");
     $("#first-train-input").val("");
     $("#frequency-input").val("");
+  }
 });
 
 database.ref().on("child_added", function(childSnapshot) {
