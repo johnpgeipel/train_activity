@@ -35,16 +35,7 @@ var firebaseConfig = {
 $(document).ready(function() {
         displayTime();
     
-    // displayTime();
-
-  // function invalidInfo() {
-  //   alert("The information you have entered is invalid. Please try again.");
-  //     $("#train-name-input").val("");
-  //     $("#destination-name-input").val("");
-  //     $("#first-train-input").val("");
-  //     $("#frequency-input").val("");
-  //     break
-  // }
+ 
   
 
   $("#add-train-btn").on("click", function(event) {
@@ -57,7 +48,7 @@ $(document).ready(function() {
     firstTrain = $("#first-train-input").val().trim();
     freqTrain = $("#frequency-input").val().trim();
 
-    if (!trainName || !destinationName || !firstTrain || !freqTrain || freqTrain <=0) {
+    if (!trainName || !destinationName || !firstTrain || firstTrain>2400 || isNaN(firstTrain) || !freqTrain || freqTrain <=0) {
       // invalidInfo();
       alert("The information you have entered is invalid. Please try again.");
       $("#train-name-input").val("");
@@ -65,107 +56,97 @@ $(document).ready(function() {
       $("#first-train-input").val("");
       $("#frequency-input").val("");
       
+      
+      
     } else {
 
     // create variable for holding new train info
-  var newTrain = {
-    name: trainName,
-    destination: destinationName,
-    firstTrain: firstTrain,
-    frequency: freqTrain
-    
-    };
-    
-
-    
-
-    // adds newTrain info to the firebase database
+    var newTrain = {
+      name: trainName,
+      destination: destinationName,
+      firstTrain: firstTrain,
+      frequency: freqTrain
+      
+      };
+   
     database.ref().push(newTrain);
 
-    console.log(newTrain.name)
-    console.log(newTrain.destination)
-    console.log(newTrain.firstTrain)
-    console.log(newTrain.frequency)
-
-    // Alerts user to new train being added to roster
-    // alert("New train added!");
-
-    // Clears the input fields after submission of newTrain info
+   
     $("#train-name-input").val("");
     $("#destination-name-input").val("");
     $("#first-train-input").val("");
     $("#frequency-input").val("");
-  }
-});
-
+    }
+  });
+    
 database.ref().on("child_added", function(childSnapshot) {
-    console.log(childSnapshot.val());
-    // declare variables for next arrival and minutes away
-    var nextArr;
-    var minAway;
+        console.log(childSnapshot.val());
+        // declare variables for next arrival and minutes away
+        var nextArr;
+        var minAway;
+        
+
+        
+
+        
+
+        var currentTime = moment().format("hh:mm");
+        console.log(currentTime)
+
+        // set time back one year from snapshot value
+        var firstTrainNew = moment(childSnapshot.val().firstTrain,"hh:mm").subtract(1, "year");
+
+        // calculate differance between current and firstTrain
+        var diffTime = moment().diff(moment(firstTrainNew), "minutes");
+        console.log("Diff: " + diffTime);
+
+        // timeRemainder calculates the modulus of the diffence and the snapshot of the frequency
+        var timeRemainder = diffTime % childSnapshot.val().frequency;
+        console.log("Remainder: " + timeRemainder)
+
+        var minAway = childSnapshot.val().frequency - timeRemainder;
+        
+  
+        if (!minAway || isNaN(minAway)) {
+          // invalidInfo();
+          alert("The information you entered is invalid. Please try again.");
+          console.log("is NaN");
+          // break
+        } else {
+
+        
+
+        console.log("Min Away: " + minAway)
+
+        var nextArr = moment().add(minAway, "minutes");
+            nextArr = moment(nextArr).format("hh:mm");
+        // if (!nextArr) {
+        //     invalidInfo();
+        //       // break
+        //     }
+
+
+
+        // Stores the data into variables to prepend the datatable
+        var trainName = childSnapshot.val().name;
+        var destinationName = childSnapshot.val().destination;
+        var firstTrain = childSnapshot.val().firstTrain;
+        var freqTrain = childSnapshot.val().frequency;
+
+        
+        var trainRow = $("<tr>").append(
+            $("<td>").text(trainName),
+            $("<td>").text(destinationName),
+            $("<td>").text(freqTrain),
+            $("<td>").text(nextArr),
+            $("<td>").text(minAway)
+        );
+
+        $("#schedule-table > tbody").append(trainRow);
+        console.log(trainRow)
+
+        }
+      })
     
-
-    
-
-    
-
-    var currentTime = moment().format("hh:mm");
-    console.log(currentTime)
-
-    // set time back one year from snapshot value
-    var firstTrainNew = moment(childSnapshot.val().firstTrain,"hh:mm").subtract(1, "year");
-
-    // calculate differance between current and firstTrain
-    var diffTime = moment().diff(moment(firstTrainNew), "minutes");
-    console.log("Diff: " + diffTime);
-
-    // timeRemainder calculates the modulus of the diffence and the snapshot of the frequency
-    var timeRemainder = diffTime % childSnapshot.val().frequency;
-    console.log("Remainder: " + timeRemainder)
-
-    var minAway = childSnapshot.val().frequency - timeRemainder;
-    
-
-    if (!minAway || isNaN(minAway)) {
-      // invalidInfo();
-      alert("The information you entered is invalid. Please try again.");
-      console.log("is NaN");
-      // break
-    } 
-
-    
-
-    console.log("Min Away: " + minAway)
-
-    var nextArr = moment().add(minAway, "minutes");
-        nextArr = moment(nextArr).format("hh:mm");
-    // if (!nextArr) {
-    //     invalidInfo();
-    //       // break
-    //     }
-
-
-
-    // Stores the data into variables to prepend the datatable
-    var trainName = childSnapshot.val().name;
-    var destinationName = childSnapshot.val().destination;
-    var firstTrain = childSnapshot.val().firstTrain;
-    var freqTrain = childSnapshot.val().frequency;
-
-    
-    var trainRow = $("<tr>").append(
-        $("<td>").text(trainName),
-        $("<td>").text(destinationName),
-        $("<td>").text(freqTrain),
-        $("<td>").text(nextArr),
-        $("<td>").text(minAway)
-    );
-
-    $("#schedule-table > tbody").append(trainRow);
-    console.log(trainRow)
-
-
-})
-
-
 });
+
