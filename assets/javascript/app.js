@@ -37,7 +37,14 @@ $(document).ready(function() {
     
     // displayTime();
 
-
+  // function invalidInfo() {
+  //   alert("The information you have entered is invalid. Please try again.");
+  //     $("#train-name-input").val("");
+  //     $("#destination-name-input").val("");
+  //     $("#first-train-input").val("");
+  //     $("#frequency-input").val("");
+  //     break
+  // }
   
 
   $("#add-train-btn").on("click", function(event) {
@@ -51,6 +58,7 @@ $(document).ready(function() {
     freqTrain = $("#frequency-input").val().trim();
 
     if (!trainName || !destinationName || !firstTrain || !freqTrain || freqTrain <=0) {
+      // invalidInfo();
       alert("The information you have entered is invalid. Please try again.");
       $("#train-name-input").val("");
       $("#destination-name-input").val("");
@@ -116,6 +124,14 @@ database.ref().on("child_added", function(childSnapshot) {
     console.log("Remainder: " + timeRemainder)
 
     var minAway = childSnapshot.val().frequency - timeRemainder;
+    
+
+    if (!minAway || isNaN(minAway)) {
+      // invalidInfo();
+      alert("The information you entered is invalid. Please try again.");
+      console.log("is NaN");
+      // break
+    } 
 
     
 
@@ -123,6 +139,10 @@ database.ref().on("child_added", function(childSnapshot) {
 
     var nextArr = moment().add(minAway, "minutes");
         nextArr = moment(nextArr).format("hh:mm");
+    // if (!nextArr) {
+    //     invalidInfo();
+    //       // break
+    //     }
 
 
 
