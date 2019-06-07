@@ -43,14 +43,21 @@ $(document).ready(function() {
   $("#add-train-btn").on("click", function(event) {
       event.preventDefault();
 
-    if (!trainName || !destinationName || !firstTrain || !freqTrain || freqTrain <=0) {
-      alert("The information you have entered is invalid. Please try again.")
-    } else {
+    
     //   train input from forms
     trainName = $("#train-name-input").val().trim();
     destinationName = $("#destination-name-input").val().trim();
     firstTrain = $("#first-train-input").val().trim();
     freqTrain = $("#frequency-input").val().trim();
+
+    if (!trainName || !destinationName || !firstTrain || !freqTrain || freqTrain <=0) {
+      alert("The information you have entered is invalid. Please try again.");
+      $("#train-name-input").val("");
+      $("#destination-name-input").val("");
+      $("#first-train-input").val("");
+      $("#frequency-input").val("");
+      
+    } else {
 
     // create variable for holding new train info
   var newTrain = {
