@@ -48,7 +48,7 @@ $(document).ready(function() {
     firstTrain = $("#first-train-input").val().trim();
     freqTrain = $("#frequency-input").val().trim();
 
-    if (!trainName || !destinationName || !firstTrain || firstTrain>2400 || isNaN(firstTrain) || !freqTrain || freqTrain <=0) {
+    if (!trainName || !destinationName || !firstTrain || firstTrain>2400 || isNaN(firstTrain) || !firstTrain.toString().length===4 || !freqTrain || freqTrain <=0) {
       // invalidInfo();
       alert("The information you have entered is invalid. Please try again.");
       $("#train-name-input").val("");
@@ -61,21 +61,21 @@ $(document).ready(function() {
     } else {
 
     // create variable for holding new train info
-    var newTrain = {
-      name: trainName,
-      destination: destinationName,
-      firstTrain: firstTrain,
-      frequency: freqTrain
-      
-      };
-   
-    database.ref().push(newTrain);
+      var newTrain = {
+        name: trainName,
+        destination: destinationName,
+        firstTrain: firstTrain,
+        frequency: freqTrain
+        
+        };
+    
+      database.ref().push(newTrain);
 
    
-    $("#train-name-input").val("");
-    $("#destination-name-input").val("");
-    $("#first-train-input").val("");
-    $("#frequency-input").val("");
+      $("#train-name-input").val("");
+      $("#destination-name-input").val("");
+      $("#first-train-input").val("");
+      $("#frequency-input").val("");
     }
   });
     
