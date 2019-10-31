@@ -17,7 +17,7 @@ https://johnpgeipel.github.io/train_activity/
 - Using Google Firebase, JQuery & Moment.js, this information is stored in a database and processed to calculate and display the following:
     - **Train Name**
     - **Destination**
-    - **Frequncy**
+    - **Frequency**
     - **Time of Next Arrival**
     - **Minutes Until Next Arrival**
     
