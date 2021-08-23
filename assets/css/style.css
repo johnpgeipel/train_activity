@@ -1,7 +1,5 @@
 .jumbotron, .card, .clock {
-    /* box-shadow: 0px 4px 6px slategray; */
     box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.75);
-
 }
 
 td, th {
@@ -9,7 +7,6 @@ td, th {
 }
 
 body {
-    /* background-color: rgba(216, 216, 216, 0.50); */
     background-color: rgb(47, 58, 87)
 }
 
@@ -18,21 +15,14 @@ body {
     font-size: 50px;
     letter-spacing:3px;
     text-shadow: 2px 0px 6px rgba(28, 48, 48, 0.719);
-    
-    /* color: rgba(76, 159, 187, 0.75); */
     color: rgba(255, 255, 255, 0.90);
-    /* color:  rgb(10, 51, 63); */
     font-family: 'Montserrat', sans-serif;
-    
     margin-left: 30px;
-    /* background-color: rgba(56, 46, 32, 0.6); */ 
     background-color: rgba(255, 255, 255, 0.4);
     padding: 5px 20px 5px 20px;
     border-radius: 10px;
-    
     border-top: 2px solid rgba(255, 255, 255, 0.80);
     border-bottom: 1px solid rgba(27, 17, 8, 0.781);
-    
 }
 
 .card {
@@ -41,35 +31,24 @@ body {
     border-radius: 10px;
 }
 
-
-
-
 .col-md-8 {
     padding: 0px 0px;
     margin-bottom: 10px;
 }
 
 .col-md-4 {
-    /* margin: 0px 15px 0px 15px; */
     padding: 0px;
 }
 
-
-
 .jumbotron h1 {
-    /* font-family: 'Roboto', sans-serif; */
     color: white;
     font-size: 100px;
     line-height: 90px;
     font-family: 'Raleway', sans-serif;
     font-weight: bold;
-
 }
 
 .jumbotron {
-    /* background-color: #006dcc; */
-    /* margin: 0px 10px 20px 10px; */
-    /* background: none; */
     background: url("../images/train3.png");
     background-repeat: no-repeat;
     background-size: cover;
@@ -83,7 +62,6 @@ body {
     font-family: 'Raleway', sans-serif;
     padding-left: 3px;
     letter-spacing: 1px;
-
 }
 
 .card-header {
@@ -93,18 +71,14 @@ body {
     font-weight: bold;
     border-radius: 10px !important;
     border:white 1px solid;
-    
     color:  rgb(17, 91, 114);
-
 }
 
 tr:nth-child(even) {
-    /* background-color: rgba(173, 216, 230, 0.50); */
     background-color: rgb(255, 234, 140, 0.80);
 }
 
 th, td, label, input {
-    /* font-family: 'Monserrat', sans-serif; */
     font-family: 'Raleway', sans-serif;
 }
 
@@ -124,9 +98,6 @@ tr:hover {
     background-color: white !important;
 }
 
-
-
-
 .form-control {
     background-color: rgba(173, 216, 230, 0.50);
 }
@@ -143,10 +114,9 @@ tr:hover {
     font-family: 'Raleway', sans-serif;
     font-weight: bold;
     border: none;
-
 }
 
-#footer {
+footer {
     background-color: black;
     height: 50px;
     text-align: center;
@@ -164,7 +134,7 @@ tr:hover {
     position: relative;
     min-height: 100vh;
   }
-  #content-wrap {
+#content-wrap {
     padding-bottom: 2.5rem;    /* Footer height */
   }
 
@@ -172,7 +142,6 @@ tr:hover {
     .jumbotron h1 {
         font-size: 75px;
         line-height: 70px;
-        
     }
 
     .jumbotron h3 {
@@ -186,7 +155,6 @@ tr:hover {
         font-size: 35px;
         margin-left:50px;
     }
-
 }
 
 @media screen and (max-width: 500px) {
@@ -197,7 +165,6 @@ tr:hover {
     }
     .row {
         margin: -40px 3px 5px 3px !important;
-
     }
 
     .clock {
@@ -211,9 +178,7 @@ tr:hover {
         font-weight: bold;
         border-radius: 10px !important;
         border:white 1px solid;
-        
         color:  rgb(17, 91, 114);
-    
     }
 
     th, td, tr, label, input {
@@ -223,7 +188,6 @@ tr:hover {
     .jumbotron h1 {
         font-size: 75px;
         line-height: 70px;
-        
     }
 
     .jumbotron h3 {
@@ -236,13 +200,9 @@ tr:hover {
   }
 
 @media screen and (max-width: 360px) {
-    
-
     .clock {
         font-size: 25px;
     }
-
-    
 
     th, td, tr, label, input {
         font-size: 11px !important;
@@ -251,7 +211,6 @@ tr:hover {
     .jumbotron h1 {
         font-size: 65px;
         line-height: 60px;
-        
     }
 
     .jumbotron h3 {
@@ -265,8 +224,4 @@ tr:hover {
     .card-header {
         font-size: 20px;
     }
-  }
-
-
-
-
+}
