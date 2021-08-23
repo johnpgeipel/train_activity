@@ -45,7 +45,7 @@ $(document).ready(function() {
     //   train input from forms
     trainName = $("#train-name-input").val().trim();
     destinationName = $("#destination-name-input").val().trim();
-    firstTrain = $("#first-train-input").val().trim();
+    firstTrain = $("#first-train-input").val().trim().replace(':', '');
     freqTrain = $("#frequency-input").val().trim();
 
     if (!trainName || !destinationName || !firstTrain || firstTrain>2400 || isNaN(firstTrain) || !firstTrain.toString().length===4 || !freqTrain || freqTrain <=0) {
