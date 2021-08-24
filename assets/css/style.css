@@ -56,7 +56,7 @@ body {
     margin: 0px;
 }
 
-.jumbotron h3 {
+.jumbotron #header-subtitle {
     font-size: 26px;
     color: white;
     font-family: 'Raleway', sans-serif;
@@ -86,10 +86,6 @@ label {
     font-weight: bold;
 }
 
-th, tr {
-    /* border: none !important; */
-}
-
 tr:hover {
     background-color: gold !important;
 }
@@ -114,6 +110,11 @@ tr:hover {
     font-family: 'Raleway', sans-serif;
     font-weight: bold;
     border: none;
+}
+
+.float-right {
+    float: right;
+    margin: 15px 0 0 0;
 }
 
 footer {
