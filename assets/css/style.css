@@ -1,8 +1,37 @@
 @font-face {
     font-family: montserrat;
     src: url('../fonts/Montserrat-Regular.ttf') format("truetype");
+    font-display: swap;
 }
 
+/* raleway-regular - latin */
+@font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/raleway-v22-latin-regular.eot'); /* IE9 Compat Modes */
+    src: local(''),
+         url('../fonts/raleway-v22-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/raleway-v22-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/raleway-v22-latin-regular.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/raleway-v22-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/raleway-v22-latin-regular.svg#Raleway') format('svg'); /* Legacy iOS */
+    font-display: swap;
+  }
+  /* raleway-600 - latin */
+  @font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 600;
+    src: url('../fonts/raleway-v22-latin-600.eot'); /* IE9 Compat Modes */
+    src: local(''),
+         url('../fonts/raleway-v22-latin-600.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/raleway-v22-latin-600.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/raleway-v22-latin-600.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/raleway-v22-latin-600.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/raleway-v22-latin-600.svg#Raleway') format('svg'); /* Legacy iOS */
+    font-display: swap;
+  }
 
 .jumbotron, .card, .clock {
     box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.75);
@@ -50,8 +79,7 @@ body {
     color: white;
     font-size: 100px;
     line-height: 90px;
-    font-family: 'Raleway', sans-serif;
-    font-weight: bold;
+    font-family: 'Raleway';
 }
 
 .jumbotron {
@@ -65,14 +93,14 @@ body {
 .jumbotron #header-subtitle {
     font-size: 26px;
     color: white;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Raleway';
     padding-left: 3px;
     letter-spacing: 1px;
 }
 
 .card-header {
     background-color: white;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Raleway';
     font-size: 30px;
     font-weight: bold;
     border-radius: 10px !important;
@@ -85,7 +113,7 @@ tr:nth-child(even) {
 }
 
 th, td, label, input {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Raleway';
 }
 
 label {
@@ -113,7 +141,7 @@ tr:hover {
 
 .btn {
     background-color: rgb(17, 91, 114);
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Raleway';
     font-weight: bold;
     border: none;
 }
@@ -127,7 +155,7 @@ footer {
     background-color: black;
     height: 50px;
     text-align: center;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Raleway';
     font-size: 15px;
     line-height: 40px;
     color: white;
@@ -180,7 +208,7 @@ footer {
 
     .card-header {
         background-color: white;
-        font-family: 'Raleway', sans-serif;
+        font-family: 'Raleway';
         font-size: 25px;
         font-weight: bold;
         border-radius: 10px !important;
