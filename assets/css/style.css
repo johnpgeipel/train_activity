@@ -87,7 +87,7 @@ label {
 }
 
 th, tr {
-    border: none !important;
+    /* border: none !important; */
 }
 
 tr:hover {
